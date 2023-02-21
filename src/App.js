@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import Statistics from './statistics';
 
 function App() {
   const [good, setGood] = useState(0);
@@ -14,12 +15,7 @@ function App() {
   };
   const handleBad = () =>{
     setBad(bad+1);
-  };
-  const all = bad + neutral + good;
-  const average = (goodVotes, badVotes, neutralVotes)=> {
-    let sum = goodVotes - badVotes ;
-    return sum/(goodVotes + neutralVotes + badVotes);
-  }
+  };  
 
   return (
     <div className="App">
@@ -29,12 +25,7 @@ function App() {
       <button className='feedback-button' onClick={handleBad}>Bad</button>
       <hr/>
       <h2>Statistics.</h2>
-      <p>Good: {good} </p>
-      <p>Neutral: {neutral} </p>
-      <p>Bad: {bad}</p>
-      <p>All: {good+ neutral + bad}</p>
-      <p>Average: {average(good, bad, neutral)}</p>
-      <p>Positive: {(good/all)*100}%</p>  
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   );
   //<p>Positive: {(good/all)*100}%</p> muestra un NAN al comienzo debido a la falta de datos
