@@ -1,28 +1,21 @@
 import './App.css';
 import { useState } from 'react';
 import Statistics from './statistics';
+import Boton from './boton'
 
 function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const handleGood = () =>{
-    setGood(good+1);
-  };
-  const handleNeutral = () =>{
-    setNeutral(neutral+1);
-  };
-  const handleBad = () =>{
-    setBad(bad+1);
-  };  
+ 
 
   return (
     <div className="App">
       <h1>Give Feedback please!</h1>
-      <button className = 'feedback-button' onClick={handleGood}>Good</button>
-      <button className='feedback-button' onClick={handleNeutral}>Neutral</button>
-      <button className='feedback-button' onClick={handleBad}>Bad</button>
+      <Boton name='Good' onClick={()=>setGood(good+1)}/>
+      <Boton name='Neutral' onClick={()=>setNeutral(neutral+1)}/>
+      <Boton name='Bad' onClick={()=>setBad(bad+1)}/>
       <hr/>
       <h1>Statistics.</h1>
       <Statistics good={good} neutral={neutral} bad={bad} />
