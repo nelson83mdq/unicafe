@@ -8,8 +8,6 @@ function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
- 
-
   return (
     <div className="App">
       <h1>Give Feedback please!</h1>

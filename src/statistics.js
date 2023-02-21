@@ -1,4 +1,6 @@
+/*
 const Statistics = (props) => {
+
     const good = props.good ;
     const bad = props.bad ;
     const neutral = props.neutral;
@@ -24,6 +26,34 @@ const Statistics = (props) => {
         </div>
     );
     }
+}
+ 
+export default Statistics;
+
+// componente anterior queda sin uso, ya que se genera un componente nuevo especializado mediante props.
+// the previous component has no more use, instead i generated a new component that can be specialized using props
+
+*/
+//---------------------------------------
+const Statistics = (props) => {
+    const name = props.name ;
+    //const votes = props.votes;
+    const [gVotes, nVotes, bVotes] = props.values;
+
+    const sum = () =>{
+        return gVotes + nVotes + bVotes ;
+    };
+
+    const average = ()=> {
+        let acum = gVotes - bVotes ;
+        return acum/sum();
+      }
+
+    return (
+        <div className="statistics-view">
+            <p>{name}: {}</p>
+        </div>
+    );
 }
  
 export default Statistics;
