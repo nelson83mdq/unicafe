@@ -19,12 +19,12 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Give Feedback please!</h2>
+      <h1>Give Feedback please!</h1>
       <button className = 'feedback-button' onClick={handleGood}>Good</button>
       <button className='feedback-button' onClick={handleNeutral}>Neutral</button>
       <button className='feedback-button' onClick={handleBad}>Bad</button>
       <hr/>
-      <h2>Statistics.</h2>
+      <h1>Statistics.</h1>
       <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   );

@@ -8,7 +8,11 @@ const Statistics = (props) => {
         let sum = goodVotes - badVotes ;
         return sum/(goodVotes + neutralVotes + badVotes);
       }
-
+    if (sum === 0){
+        return (
+            <h2>No feedback given yet, please give us feedback!</h2>
+        );
+    } else {
     return (
         <div className="statistical-data">
         <p>Good: {good} </p>
@@ -19,6 +23,7 @@ const Statistics = (props) => {
         <p>Positive: {(good/sum)*100}%</p> 
         </div>
     );
+    }
 }
  
 export default Statistics;
